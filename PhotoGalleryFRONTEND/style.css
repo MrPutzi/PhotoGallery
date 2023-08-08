@@ -1,0 +1,485 @@
+/* Import font families */
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap");
+
+/* Set body styles */
+
+/* Center the container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  position: absolute;
+  margin-left: 15rem;
+  margin-right: 15rem;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+
+/* Style the form */
+.form {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Style the form title */
+.form__title {
+  color: #473dff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Style the form groups */
+.form__group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Style the form inputs */
+.form__input {
+  border: none;
+  border-bottom: 2px solid #5f57fc;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* Style the form labels */
+.form__label {
+  color: #4b42ff;
+  font-size: 1rem;
+  font-weight: 500;
+  left: 0.5rem;
+  pointer-events: none;
+  position: absolute;
+  top: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* Style the form labels when inputs are focused */
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
+  color: #6c63ff;
+  font-size: 0.75rem;
+  top: 0;
+}
+
+/* Style the form toggle password icon */
+.form__toggle-password {
+  color: #6c63ff;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% - 0.5rem);
+}
+
+/* Style the form button */
+.form__button {
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.cancel__button{
+  background-color: red;
+  border: none;
+  border-radius: 2rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2.5rem;
+  transition: all 0.3s ease;
+}
+
+/*
+.left-menu {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 25%;
+    }
+  .right-menu{
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 1rem;
+    }
+    body {
+    background-color: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+    
+}
+*/
+.left-menu {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 15rem;
+  align-content: center;
+  justify-items: center;
+  position: fixed;
+  display: inline-block;
+}
+
+
+
+body {
+  background-color: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+.courses.courses {
+  height: 25%;
+  box-sizing:content-box;
+
+}
+.left-menu li {
+  margin-top: 0 0.5rem;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.right-menu li {
+  margin-top: 0 0.5rem;
+  padding: 0 0.5rem;
+  text-align: center;
+  justify-content: top;
+}
+
+.left-menu2 {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  width: 25%;
+}
+
+/* Style the user icon */
+.user-icon {
+  background-color: #6c63ff;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+/* Style the menu options */
+.menu-options {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+  text-align: center;
+}
+
+/* Style the menu option links */
+.menu-options a {
+  color: #6c63ff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.menu-options a:hover {
+  color: #fff;
+  background-color: #6c63ff;
+  border-radius: 1em;
+  padding: 1rem 1rem;
+}
+
+.menu-options2 {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* Style the menu option links */
+.menu-options2 a {
+  color: #6c63ff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.1s ease;
+}
+
+.menu-options2 a:hover {
+  color: #fff;
+  background-color: #6c63ff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Add a style for the content area */
+.content {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Add a style for the heading in the content area */
+.content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+/* Add a style for the paragraph in the content area */
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 50rem;
+  display: inline-block;
+}
+
+/* Add a style for the button in the content area */
+.content button {
+  background-color: #6c63ff;
+  border: none;
+  row-gap: 3rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 350;
+  padding: 1rem 1rem;
+  transition: all 0.3s ease;
+}
+
+#seat-button{
+  background-color: #6c63ff;
+  border: none;
+  row-gap: 3rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 350;
+  padding: 1rem 1rem;
+  transition: all 0.3s ease;
+  width: 4rem;
+}
+
+.button.close-button{
+  width: 15rem;
+}
+/* Add a style for the button in the content area on hover */
+.content button:hover {
+  background-color: #fff;
+  color: #6c63ff;
+  cursor: pointer;
+}
+
+
+.separator {
+  height: 10px;
+  border-bottom: #5c53cc 1px solid;
+  margin: 20px 0;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.courses-table {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+
+.course.cell{
+  height: 50%;
+  width: 50%;
+}
+
+button[type="submit"] {
+  background-color: #6c63ff;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #fff;
+  color: #6c63ff;
+  border-radius: 1em;
+  padding: 1rem 1rem;
+}
+.seat-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+
+}
+
+
+button[type="cancel"] {
+  background-color: red;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+}
+
+button[type="cancel"]:hover {
+  background-color: #fff;
+  color: red;
+  border-radius: 1em;
+  padding: 1rem 1rem;
+}
+
+
+
+.element-on-right {
+position:fixed;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  align-content: center;
+  justify-items: center;
+  padding-left: 3rem;
+  margin-left: 2.4rem;
+}
+
+.element-on-right h2 {
+  color: #473dff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.mainHeader{
+  background-color: #6c63ff;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+table.content__tab {
+  border-spacing: 0;
+  width: 900px;
+  border: 1px solid #ddd;
+}
+
+.right-menu {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  margin-left: 15rem;
+  margin-right: 18rem;
+  display: inline-block;
+  width: 40%;
+}
+
+tbody#courses-table {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 150px;
+}
+
+
+td.course-cell{
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 1rem 0 1rem rgba(0, 0, 0, 0.1);
+  width: 100px;
+  padding-left: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.loginContainer{
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 15rem;
+
+}
+
+#popup-content{
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+  position:fixed;
+}
+
+#popup-container{
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+  position:fixed;
+}
+
+td.course-cell:hover{
+  cursor: default;
+}
+
+a#logout-button:hover{
+  background-color: red
+}
+
+
+form#course-form.form{
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}

@@ -2,21 +2,19 @@ package sk.kasv.fekete.opg.PhotoGallery.Controller;
 
 import com.google.gson.JsonObject;
 import com.mongodb.client.*;
-import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import org.bson.Document;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sk.kasv.fekete.opg.PhotoGallery.Database.ImagesDatabase;
+import sk.kasv.fekete.opg.PhotoGallery.Database.Database;
 import sk.kasv.fekete.opg.PhotoGallery.Util.Token;
 import sk.kasv.fekete.opg.PhotoGallery.Util.User;
 
-import java.awt.*;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 
@@ -25,10 +23,10 @@ import java.util.Map;
 @CrossOrigin
 public class RestController {
     Map<String, String> tokens = new HashMap<>();
-    ImagesDatabase databaseManager = new ImagesDatabase();
+    Database databaseManager = new Database();
     Token token = new Token();
     JSONParser parser = new JSONParser();
-    private java.util.Date Date = new java.util.Date(System.currentTimeMillis());
+    private java.util.Date Date = new Date(System.currentTimeMillis());
 
     /**
      * @name: REGISTER
@@ -40,7 +38,7 @@ public class RestController {
     @ResponseBody
     public ResponseEntity<String> register(@RequestBody User user) {
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-        MongoDatabase database = mongoClient.getDatabase("Lectures");
+        MongoDatabase database = mongoClient.getDatabase("ImagesDB");
         MongoCollection<Document> collection = database.getCollection("User");
         Document document = new Document()
                 .append("username", user.getUsername())
@@ -67,7 +65,7 @@ public class RestController {
             String username = (String) response.get("username");
             String password = (String) response.get("password");
             MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-            MongoDatabase database = mongoClient.getDatabase("Lectures");
+            MongoDatabase database = mongoClient.getDatabase("ImagesDB");
             MongoCollection<Document> collection = database.getCollection("User");
             Document document = collection.find(new Document("username", username)).first();
             if (!response.containsKey("username") || !response.containsKey("password")) {
@@ -149,7 +147,7 @@ public class RestController {
             return ResponseEntity.badRequest().body(new JSONObject(Map.of("error", "Invalid token.")));
         }
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
-        MongoDatabase database = mongoClient.getDatabase("Lectures");
+        MongoDatabase database = mongoClient.getDatabase("ImagesDB");
         MongoCollection<Document> collection = database.getCollection("User");
         Document document = collection.find(new Document("username", username)).first();
         if (document.get("password").equals(oldPassword)) {

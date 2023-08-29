@@ -13,10 +13,7 @@ import sk.kasv.fekete.opg.PhotoGallery.Util.Token;
 import sk.kasv.fekete.opg.PhotoGallery.Util.User;
 
 import java.text.ParseException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.*;
 
 
 @org.springframework.web.bind.annotation.RestController
@@ -26,6 +23,7 @@ public class RestController {
     Database databaseManager = new Database();
     Token token = new Token();
     JSONParser parser = new JSONParser();
+    List<String> UsersImages = new ArrayList<>();
     private java.util.Date Date = new Date(System.currentTimeMillis());
 
     /**
@@ -78,6 +76,8 @@ public class RestController {
                     //db.handleRequest((jakarta.servlet.http.HttpServletRequest) request,username, date());
                     Token.getInstance().insertToken(username, token);
                     //databaseManager.insertLogWithToken(username, new Date(), token);
+                    //check the database and retrieve all the saved images for the user
+                    Database databaseManager = new Database();
                     return ResponseEntity.ok(new JSONObject(Map.of("token", token, "role", document.get("role"), "username", document.get("username"))));
                 } else {
                     databaseManager.insertLogWithToken(Date, username);

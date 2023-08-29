@@ -15,4 +15,6 @@ public class MongoConfig {
     public GridFSBucket gridFSBucket(MongoDatabaseFactory mongoDbFactory, MongoConverter converter) {
         return GridFSBuckets.create(mongoDbFactory.getMongoDatabase(), converter.toString());
     }
+
+
 }
